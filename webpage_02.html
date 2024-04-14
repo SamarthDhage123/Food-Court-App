@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Options</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+background-image:url('BG.jpeg');
+
+background-size:cover
+    }
+    .button {
+color:white;
+        background-color:green;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+        border: none;
+    }
+.white{color:white;}
+.green-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.green-button:hover {
+    background-color: darkgreen;
+}
+
+.green-button-left {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+
+    <h1 class="white">Select Payment Option</h1>
+    <button class="button" onclick="redirectToGPay()">GPay</button>
+    <button class="button" onclick="payAtCounter('Cash')">Cash</button>
+    <button class="button" onclick="payAtCounter('Card')">Card</button>
+
+    <script>
+        function redirectToGPay() {
+            window.location.href = "https://pay.google.com/";
+        }
+
+        function payAtCounter(paymentMethod) {
+            alert(`Kindly pay at the canteen counter using ${paymentMethod}.`);
+        }
+    </script><a href="file:///C:/Users/Admin/Desktop/New%20folder/index.html.html">
+<button class="green-button">Back to Home page</button></a>
+<a href="file:///C:/Users/Admin/Desktop/New%20folder/webpage_001.html">
+
+<button class="green-button-left">Previous</button></a>
+</body>
+</html>
+

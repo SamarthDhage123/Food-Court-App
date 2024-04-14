@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Items</title>
+<style>
+.white{color:white}
+    body {
+        text-align: center;
+background-image:url('BG.jpeg');
+background-size:cover;
+    }
+    .food-item {
+ color: white;
+
+        display: inline-block;
+        margin: 10px;
+    }
+    .cart { color: white;
+
+        text-align: left;
+        margin: 20px auto;
+        width: 300px;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+    .button {
+        background-color: green;
+        color: white;
+    }
+</style>
+</head>
+<body>
+    <h1 class="white">Choose your food items</h1>
+    <div class="food-item">
+        <img src="Vada pav.jpeg" id="Vada pav" alt="Food 1" width="100" height="100">
+        <br class="white">
+        Vada pav
+        Price: ₹15
+        </br>
+        Quantity: <input type="number" value="0" >
+        <button onclick="addToCart('Vada pav', 15)" class="button">Add to Cart</button>
+    </div>
+<div class="food-item">
+        <img src="Samosa.jpg" id ="Samosa" alt="Food 2" width="100" height="100">
+        <br class="white">
+        Samosa
+        Price: ₹20
+        </br>
+        Quantity: <input type="number" value="0">
+        <button onclick="addToCart('Samosa',20)"  class="button" >Add to Cart</button>
+    </div>
+
+<div class="food-item">
+        <img src="Masala Dosa.jpg"  id="Masala Dose"  alt="Food 3" width="100" height="100">
+        <br class="white">
+        Masala Dosa
+        Price: ₹30
+        </br>
+        Quantity: <input type="number" value="0">
+        <button onclick="addToCart('Masala Dosa',30)" class="button">Add to Cart</button>
+    </div>
+<div class="food-item">
+        <img src="Poha.jpg" id ="Poha" alt="Food 5" width="100" height="100">
+        <br class="white">
+        Poha
+        Price: ₹30
+        </br>
+        Quantity: <input type="number" value="0">
+        <button onclick="addToCart('Poha',30)" class="button" >Add to Cart</button>
+    </div>
+<div class="food-item">
+        <img src="Veg.Sandwich.jpg"  id ="Veg.Sandwich" alt="Food 6" width="100" height="100">
+        <br class="white">
+        Veg.Sandwich
+        Price: ₹30
+        </br>
+        Quantity: <input type="number" value="0">
+        <button onclick="addToCart('Veg.Sandwich',30)" class="button" >Add to Cart</button>
+    </div>
+
+
+<div class="food-item">
+        <img src="Veg.Thali.jpg" id="Veg.Thali" alt="Food 9" width="100" height="100">
+        <br class="white" >
+       Veg.Thali
+        Price: ₹90
+        </br>
+        Quantity: <input type="number" value="0">
+        <button onclick="addToCart('Veg.Thali',90)"  class="button"  >Add to Cart</button>
+    </div>
+<div class="food-item">
+        <img src="Veg.Biryani.jpg" id="Veg.Biryani"="Food 10" width="100" height="100">
+        <br class="white" >
+        Veg.Biryani
+        Price: ₹90
+        </br>
+        Quantity: <input type="number" value="0">
+        <button onclick="addToCart('Veg.Biryani',90)" class="button" >Add to Cart</button>
+    </div>
+
+
+
+
+
+
+    <!-- Repeat the above div for other food items -->
+
+    <div class="cart">
+        <h2>Cart</h2>
+        <ul id="cart-items">
+        </ul>
+        <p>Grand Total: ₹<span id="grand-total">0</span></p>
+        <button onclick="generateBill()" class="button">Generate Bill</button>
+    </div>
+
+
+    <script>
+        let cartTotal = 0;
+
+        function addToCart(itemName, price) {
+            const quantity = parseInt(event.target.previousElementSibling.value);
+            const itemTotal = price * quantity;
+            cartTotal += itemTotal;
+            document.getElementById('grand-total').textContent = cartTotal;
+            const cartItem = `<li>${itemName} - Quantity: ${quantity} - ₹${itemTotal}</li>`;
+            document.getElementById('cart-items').innerHTML += cartItem;
+        }
+
+        function generateBill() {
+            const bill = `Total: ₹${cartTotal}`;
+            alert(bill);
+            // Additional logic to save/print the bill as needed
+        }
+    </script>
+<a href="file:///C:/Users/Admin/Desktop/New%20folder/webpage_02.html"><input type="submit" value="Prodeed to pay" class="button"> </a>
+</body>
+</html>
